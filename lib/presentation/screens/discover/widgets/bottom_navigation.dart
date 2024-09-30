@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'dart:async';
 
+import 'package:live_in_hotels/presentation/screens/discover/widgets/messages.dart';
+
+import '../../../../datasources/local/dummy_data.dart';
+
 class FloatingBottomNavBar extends StatefulWidget {
   final Widget child;
 
@@ -20,6 +24,10 @@ class _FloatingBottomNavBarState extends State<FloatingBottomNavBar> {
     setState(() {
       _selectedIndex = index;
     });
+
+    if (index == 3) {
+      showMessagesBottomSheet(context, dummy_messages, isLoading: true);
+    }
   }
 
   void _resetHideTimer() {
@@ -155,4 +163,15 @@ class _FloatingBottomNavBarState extends State<FloatingBottomNavBar> {
       ),
     );
   }
+}
+
+void showMessagesBottomSheet(BuildContext context, List<Message>? messages,
+    {bool isLoading = false}) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    builder: (context) {
+      return MessagesBottomSheet();
+    },
+  );
 }

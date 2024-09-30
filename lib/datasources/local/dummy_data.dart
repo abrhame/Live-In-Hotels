@@ -258,3 +258,33 @@ List<Room> dummyRooms = [
   ),
   // Add more rooms as needed
 ];
+
+// Model for message
+class Message {
+  final String senderProfileImage;
+  final String senderName;
+  final String content;
+  final bool isCurrentUser;
+
+  Message({
+    required this.senderProfileImage,
+    required this.senderName,
+    required this.content,
+    required this.isCurrentUser,
+  });
+}
+
+// Example message list
+List<Message> dummy_messages = [
+  Message(
+      senderProfileImage: 'assets/discover_top.jpg',
+      senderName: 'User1',
+      content: 'Hello!',
+      isCurrentUser: false),
+  Message(
+      senderProfileImage: 'assets/discover_top.jpg',
+      senderName: 'User2',
+      content: 'Hi there!',
+      isCurrentUser: true),
+  // Add more messages here
+];
