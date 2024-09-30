@@ -140,11 +140,12 @@ const dummy_data = [
 ];
 
 class Room {
-  final String imageUrl;
+  final List<String> imageUrls; // List of image URLs for the room
   final String name;
   final double rating;
-  final int reviews;
+  final int reviewCount; // Number of reviews
   final String hostedBy;
+  final String roomType; // Type of room (e.g., "Entire home", "Private room")
   final List<String> amenities;
   final String checkInType;
   final String checkInDetails;
@@ -152,14 +153,15 @@ class Room {
   final String experienceDetails;
   final double price;
   final String availability;
-  final int numberOfNights;
+  final int numberOfNights; // Number of nights for booking
 
   Room({
-    required this.imageUrl,
+    required this.imageUrls,
     required this.name,
     required this.rating,
-    required this.reviews,
+    required this.reviewCount,
     required this.hostedBy,
+    required this.roomType,
     required this.amenities,
     required this.checkInType,
     required this.checkInDetails,
@@ -173,11 +175,16 @@ class Room {
 
 List<Room> dummyRooms = [
   Room(
-    imageUrl: 'assets/discover_top.jpg',
+    imageUrls: [
+      'assets/discover_top.jpg',
+      'assets/discover_top.jpg',
+      'assets/discover_top.jpg',
+    ], // List of image URLs for the room
     name: 'Entire Cabin in Lillehammer',
     rating: 4.8,
-    reviews: 150,
+    reviewCount: 150, // Number of reviews
     hostedBy: 'Hosted by Anna',
+    roomType: 'Entire home', // Type of room
     amenities: [
       'WiFi',
       'TV',
@@ -197,31 +204,57 @@ List<Room> dummyRooms = [
     availability: '18 - 21 Oct',
     numberOfNights: 3,
   ),
-
   Room(
-    imageUrl: 'assets/discover_top.jpg',
-    name: 'Entire Cabin in Lillehammer',
-    rating: 4.8,
-    reviews: 150,
-    hostedBy: 'Hosted by Anna',
+    imageUrls: [
+      'assets/discover_top.jpg',
+      'assets/discover_top.jpg',
+      'assets/discover_top.jpg',
+    ], // List of image URLs for the second room
+    name: 'Charming Apartment in Oslo',
+    rating: 4.5,
+    reviewCount: 100, // Number of reviews
+    hostedBy: 'Hosted by John',
+    roomType: 'Private room', // Type of room
     amenities: [
       'WiFi',
+      'Air conditioning',
+      'Kitchen',
       'TV',
-      'Indoor fireplace',
-      'Hair dryer',
-      'Washing machine',
-      'Dryer',
-      'Refrigerator',
-      'Dishwasher',
+      'Parking',
     ],
     checkInType: 'Self Check-in',
-    checkInDetails: 'Check yourself in with a lockbox.',
-    experience: 'Great check-in experience',
-    experienceDetails:
-        '100% of recent guests give the check-in process a 5-star rating.',
-    price: 120.0,
-    availability: '18 - 21 Oct',
-    numberOfNights: 3,
+    checkInDetails: 'Use the smart lock for entry.',
+    experience: 'Smooth check-in experience',
+    experienceDetails: 'Most guests found it easy to check in.',
+    price: 150.0,
+    availability: '15 - 20 Nov',
+    numberOfNights: 5,
+  ),
+  Room(
+    imageUrls: [
+      'assets/discover_top.jpg',
+      'assets/discover_top.jpg',
+      'assets/discover_top.jpg',
+    ], // List of image URLs for the third room
+    name: 'Luxurious Villa in Bergen',
+    rating: 4.9,
+    reviewCount: 75, // Number of reviews
+    hostedBy: 'Hosted by Lisa',
+    roomType: 'Entire home', // Type of room
+    amenities: [
+      'WiFi',
+      'Pool',
+      'Gym',
+      'Spa',
+      'Kitchen',
+    ],
+    checkInType: 'Self Check-in',
+    checkInDetails: 'Enjoy the villa at your own pace.',
+    experience: 'Exceptional stay experience',
+    experienceDetails: 'Guests rated their stay highly.',
+    price: 300.0,
+    availability: '1 - 7 Dec',
+    numberOfNights: 6,
   ),
   // Add more rooms as needed
 ];
