@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class MySearchWidget extends StatefulWidget {
+  const MySearchWidget({super.key});
+
   @override
   _MySearchWidgetState createState() => _MySearchWidgetState();
 }
@@ -35,7 +37,7 @@ class _MySearchWidgetState extends State<MySearchWidget> {
                     padding: const EdgeInsets.only(left: 15.0),
                     child: Row(
                       children: [
-                        Icon(Icons.search, color: Colors.white),
+                        const Icon(Icons.search, color: Colors.white),
                         const SizedBox(
                             width: 8.0), // Space between icon and text
                         Column(

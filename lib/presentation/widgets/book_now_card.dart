@@ -29,7 +29,7 @@ class BookingCard extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "$availability",
+                    availability,
                     style: const TextStyle(
                       fontSize: 12, // Small font size for availability
                       color: Colors.white, // White text color
