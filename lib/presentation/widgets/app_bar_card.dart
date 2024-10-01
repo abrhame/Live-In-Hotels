@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:live_in_hotels/presentation/widgets/search_textfield.dart';
 
@@ -78,7 +77,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   fontWeight: FontWeight.w500),
             ),
           ),
-          MySearchWidget(),
+          const MySearchWidget(),
         ],
       ),
     );

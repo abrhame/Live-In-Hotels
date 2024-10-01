@@ -78,7 +78,7 @@ class RoomDetailsBottomSheet extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "${room.roomType}",
+                              room.roomType,
                               style: const TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w500,
@@ -86,7 +86,7 @@ class RoomDetailsBottomSheet extends StatelessWidget {
                             ),
                             const SizedBox(height: 2),
                             Text(
-                              "${room.hostedBy}",
+                              room.hostedBy,
                               style: const TextStyle(
                                   fontSize: 11,
                                   color: Color.fromARGB(255, 129, 129, 129)),
@@ -115,9 +115,9 @@ class RoomDetailsBottomSheet extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Amenities",
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.w500,
                           ),
@@ -149,7 +149,7 @@ class RoomDetailsBottomSheet extends StatelessWidget {
                             ),
                             const SizedBox(width: 2),
                             Text(
-                              "${room.checkInType}",
+                              room.checkInType,
                               style: const TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w500,
@@ -159,7 +159,7 @@ class RoomDetailsBottomSheet extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          "${room.checkInDetails}",
+                          room.checkInDetails,
                           style: const TextStyle(
                               fontSize: 11,
                               color: Color.fromARGB(255, 129, 129, 129)),
@@ -188,7 +188,7 @@ class RoomDetailsBottomSheet extends StatelessWidget {
                             ),
                             const SizedBox(width: 2),
                             Text(
-                              "${room.experience}",
+                              room.experience,
                               style: const TextStyle(
                                 fontSize: 13,
                                 fontWeight: FontWeight.w500,
@@ -198,7 +198,7 @@ class RoomDetailsBottomSheet extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          "${room.experienceDetails}",
+                          room.experienceDetails,
                           style: const TextStyle(
                               fontSize: 11,
                               color: Color.fromARGB(255, 129, 129, 129)),

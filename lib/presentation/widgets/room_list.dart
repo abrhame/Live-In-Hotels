@@ -189,7 +189,7 @@ void _showRoomDetails(BuildContext context, Room room) {
     isScrollControlled: true,
     builder: (context) {
       return Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),

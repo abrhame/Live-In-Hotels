@@ -22,7 +22,7 @@ class AmenitiesChips extends StatelessWidget {
               amenity,
               style: const TextStyle(fontSize: 10), // Smaller text size
             ),
-            labelPadding: EdgeInsets.symmetric(horizontal: 4, vertical: 0),
+            labelPadding: const EdgeInsets.symmetric(horizontal: 4, vertical: 0),
             backgroundColor: Colors.grey[200], // Chip background color
             padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 0.0),
             materialTapTargetSize: MaterialTapTargetSize
