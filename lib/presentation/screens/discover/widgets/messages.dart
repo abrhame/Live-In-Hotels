@@ -32,7 +32,7 @@ class _MessagesBottomSheetState extends State<MessagesBottomSheet> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: Color.fromARGB(255, 231, 231, 231),
         borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
       ),
       child: Column(
@@ -129,8 +129,9 @@ class _MessagesBottomSheetState extends State<MessagesBottomSheet> {
   }
 
   Widget _buildMessageInput() {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.all(8.0),
+      color: Colors.white,
       child: Row(
         children: [
           IconButton(
