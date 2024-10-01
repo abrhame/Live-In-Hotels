@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:live_in_hotels/presentation/screens/discover/widgets/room_list.dart';
+import 'package:live_in_hotels/presentation/widgets/room_list.dart';
 
-import 'widgets/app_bar_card.dart';
-import 'widgets/horizontall_scrollable_image.dart';
+import '../../widgets/app_bar_card.dart';
+import '../../widgets/horizontall_scrollable_image.dart';
 
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({super.key});

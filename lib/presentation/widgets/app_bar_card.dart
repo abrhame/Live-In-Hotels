@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:live_in_hotels/presentation/widgets/search_textfield.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
@@ -77,46 +78,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   fontWeight: FontWeight.w500),
             ),
           ),
-          Positioned(
-            bottom: 16.0,
-            left: 16.0,
-            right: 16.0,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(30.0),
-              child: BackdropFilter(
-                filter:
-                    ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0), // Blur effect
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(
-                        0.3), // Adjust opacity to enhance the blur effect
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.search, color: Colors.white),
-                      hintText: 'Search...',
-                      hintStyle: const TextStyle(color: Colors.white),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30.0),
-                        borderSide: BorderSide.none,
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30.0),
-                        borderSide: BorderSide.none,
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30.0),
-                        borderSide: BorderSide.none,
-                      ),
-                      contentPadding:
-                          const EdgeInsets.symmetric(vertical: 12.0),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
+          MySearchWidget(),
         ],
       ),
     );

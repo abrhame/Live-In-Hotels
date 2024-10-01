@@ -1,7 +1,7 @@
 import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import '../../../../datasources/local/dummy_data.dart';
+import '../../datasources/local/dummy_data.dart';
 
 class MessagesBottomSheet extends StatefulWidget {
   const MessagesBottomSheet({super.key});
@@ -31,9 +31,13 @@ class _MessagesBottomSheetState extends State<MessagesBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height * 0.9, // Adjusted height
       decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 231, 231, 231),
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
+        color: Color.fromARGB(255, 230, 235, 240),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(30.0),
+          topRight: Radius.circular(30.0),
+        ),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -41,6 +45,24 @@ class _MessagesBottomSheetState extends State<MessagesBottomSheet> {
           _buildAppBar(context),
           isLoading ? _buildShimmerEffect() : _buildMessageList(),
           _buildMessageInput(),
+          Container(
+            height: 15.0, // Adjusted height for the handle
+            width: double.infinity,
+            color: Colors.white,
+            child: Column(
+              children: [
+                Container(
+                  width: 130.0, // Make the handle wider
+                  height: 5.0,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 87, 87, 87),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+                const SizedBox(height: 2.0),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -49,7 +71,13 @@ class _MessagesBottomSheetState extends State<MessagesBottomSheet> {
   Widget _buildAppBar(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      color: Colors.white,
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(30.0),
+          topRight: Radius.circular(30.0),
+        ),
+        color: Colors.white,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -112,7 +140,7 @@ class _MessagesBottomSheetState extends State<MessagesBottomSheet> {
                   '${!isCurrentUser ? message.senderName : ''} ${!isCurrentUser ? '\n' : ''}${message.content}',
               color: isCurrentUser
                   ? (Colors.blueGrey[800] ?? Colors.blueGrey)
-                  : (Colors.grey[300] ?? Colors.grey),
+                  : (Colors.white ?? Colors.grey),
               isSender: isCurrentUser,
               tail: true, // Tail effect pointing to the sender
             ),
@@ -132,38 +160,73 @@ class _MessagesBottomSheetState extends State<MessagesBottomSheet> {
     return Container(
       padding: const EdgeInsets.all(8.0),
       color: Colors.white,
-      child: Row(
+      height: 70, // Adjusted height for the container
+      child: Column(
         children: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () {
-              // Handle add action
-            },
-          ),
           Expanded(
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Type a message...",
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: const BorderSide(color: Colors.grey),
+            child: Row(
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.add),
+                  onPressed: () {
+                    // Handle add action
+                  },
                 ),
-                filled: true,
-                fillColor: Colors.grey[300],
-              ),
+                Expanded(
+                  child: SizedBox(
+                    height: 45,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 148, 148,
+                                148), // Faded gray for enabled state
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 148, 148,
+                                148), // Faded gray for focused state
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                          borderSide: const BorderSide(
+                            color: Color.fromARGB(255, 148, 148,
+                                148), // Faded gray for error state
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
+                        // Removed hint text
+                        suffixIcon: IconButton(
+                          icon: const Icon(Icons.send), // Example suffix icon
+                          onPressed: () {
+                            // Handle send action
+                          },
+                        ),
+                      ),
+                      style: const TextStyle(
+                          height: 1.5), // Smaller text input height
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.camera_alt),
+                  onPressed: () {
+                    // Handle camera action
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.mic),
+                  onPressed: () {
+                    // Handle microphone action
+                  },
+                ),
+              ],
             ),
-          ),
-          IconButton(
-            icon: const Icon(Icons.camera_alt),
-            onPressed: () {
-              // Handle camera action
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.mic),
-            onPressed: () {
-              // Handle microphone action
-            },
           ),
         ],
       ),

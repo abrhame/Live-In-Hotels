@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:live_in_hotels/presentation/screens/discover/widgets/bottom_navigation.dart';
+import 'package:live_in_hotels/presentation/widgets/bottom_navigation.dart';
 
 import 'presentation/screens/discover/discover.dart';
 

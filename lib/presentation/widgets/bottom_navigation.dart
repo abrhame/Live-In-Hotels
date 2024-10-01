@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'dart:async';
 
-import 'package:live_in_hotels/presentation/screens/discover/widgets/messages.dart';
+import 'package:live_in_hotels/presentation/widgets/messages.dart';
 
-import '../../../../datasources/local/dummy_data.dart';
+import '../../datasources/local/dummy_data.dart';
 
 class FloatingBottomNavBar extends StatefulWidget {
   final Widget child;
@@ -170,8 +170,9 @@ void showMessagesBottomSheet(BuildContext context, List<Message>? messages,
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
+    backgroundColor: Colors.transparent, // Set background to transparent
     builder: (context) {
-      return const MessagesBottomSheet();
+      return const MessagesBottomSheet(); // No need for the outer Container
     },
   );
 }
