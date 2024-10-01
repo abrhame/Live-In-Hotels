@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../datasources/local/dummy_data.dart';
+import '../../datasources/local/dummy_data.dart';
 import 'room_bottom_detail.dart';
 
 class RoomCard extends StatefulWidget {

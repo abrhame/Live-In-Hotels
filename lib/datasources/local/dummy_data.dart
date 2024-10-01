@@ -283,7 +283,7 @@ class Message {
 List<Message> dummy_messages = [
   Message(
       senderProfileImage: 'assets/discover_top.jpg',
-      senderName: 'User1',
+      senderName: 'Abrham',
       content: 'Hello!',
       isCurrentUser: false),
   Message(
