@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:live_in_hotels/presentation/screens/discover/widgets/room_list.dart';
 
 import 'widgets/app_bar_card.dart';
@@ -21,9 +22,10 @@ class _DiscoverPageState extends State<DiscoverPage> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Color.fromARGB(255, 240, 240, 240),
       appBar: CustomAppBar(height: 200.0),
-      body: Padding(
+      body: Container(
         padding: EdgeInsets.only(left: 20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
