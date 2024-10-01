@@ -145,7 +145,8 @@ class Room {
   final double rating;
   final int reviewCount; // Number of reviews
   final String hostedBy;
-  final String roomType; // Type of room (e.g., "Entire home", "Private room")
+  final String roomType;
+  final String hostImage;
   final List<String> amenities;
   final String checkInType;
   final String checkInDetails;
@@ -162,6 +163,7 @@ class Room {
     required this.reviewCount,
     required this.hostedBy,
     required this.roomType,
+    required this.hostImage,
     required this.amenities,
     required this.checkInType,
     required this.checkInDetails,
@@ -196,6 +198,7 @@ List<Room> dummyRooms = [
       'Dishwasher',
     ],
     checkInType: 'Self Check-in',
+    hostImage: 'assets/discover_top.jpg',
     checkInDetails: 'Check yourself in with a lockbox.',
     experience: 'Great check-in experience',
     experienceDetails:
@@ -215,6 +218,7 @@ List<Room> dummyRooms = [
     reviewCount: 100, // Number of reviews
     hostedBy: 'Hosted by John',
     roomType: 'Private room', // Type of room
+    hostImage: 'assets/discover_top.jpg',
     amenities: [
       'WiFi',
       'Air conditioning',
@@ -241,6 +245,7 @@ List<Room> dummyRooms = [
     reviewCount: 75, // Number of reviews
     hostedBy: 'Hosted by Lisa',
     roomType: 'Entire home', // Type of room
+    hostImage: 'assets/discover_top.jpg',
     amenities: [
       'WiFi',
       'Pool',
