@@ -71,7 +71,7 @@ class _FloatingBottomNavBarState extends State<FloatingBottomNavBar> {
               left: 16.0,
               right: 16.0,
               bottom:
-                  60.0, // Place closer to the bottom and above the pull-up bar
+                  18.0, // Place closer to the bottom and above the pull-up bar
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(30.0),
                 child: BackdropFilter(
@@ -146,13 +146,13 @@ class _FloatingBottomNavBarState extends State<FloatingBottomNavBar> {
                 }
               },
               child: Container(
-                height: 50.0, // Wider handle bar for easy pulling
+                height: 15.0, // Wider handle bar for easy pulling
                 alignment: Alignment.center,
                 child: Container(
-                  width: 100.0, // Make the handle wider
-                  height: 8.0,
+                  width: 130.0, // Make the handle wider
+                  height: 5.0,
                   decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Color.fromARGB(214, 54, 54, 54),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
