@@ -4,7 +4,7 @@ import 'package:live_in_hotels/presentation/screens/discover/widgets/room_list.d
 import 'widgets/app_bar_card.dart';
 
 class DiscoverPage extends StatefulWidget {
-  DiscoverPage({Key? key}) : super(key: key);
+  const DiscoverPage({super.key});
 
   @override
   _DiscoverPageState createState() => _DiscoverPageState();
@@ -21,23 +21,26 @@ class _DiscoverPageState extends State<DiscoverPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: CustomAppBar(height: 200.0),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(height: 16.0),
-          Text(
-            'The most relevant ',
-            textAlign: TextAlign.left,
-            style: TextStyle(
-              fontSize: 16.0,
-              fontWeight: FontWeight.normal,
+      body: Padding(
+        padding: EdgeInsets.only(left: 20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 16.0),
+            Text(
+              'The most relevant ',
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.normal,
+              ),
             ),
-          ),
-          RoomList()
-        ],
+            const SizedBox(height: 8.0),
+            RoomList()
+          ],
+        ),
       ),
     );
   }

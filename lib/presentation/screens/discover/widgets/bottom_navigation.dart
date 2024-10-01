@@ -9,7 +9,7 @@ import '../../../../datasources/local/dummy_data.dart';
 class FloatingBottomNavBar extends StatefulWidget {
   final Widget child;
 
-  const FloatingBottomNavBar({Key? key, required this.child}) : super(key: key);
+  const FloatingBottomNavBar({super.key, required this.child});
 
   @override
   _FloatingBottomNavBarState createState() => _FloatingBottomNavBarState();
@@ -171,7 +171,7 @@ void showMessagesBottomSheet(BuildContext context, List<Message>? messages,
     context: context,
     isScrollControlled: true,
     builder: (context) {
-      return MessagesBottomSheet();
+      return const MessagesBottomSheet();
     },
   );
 }

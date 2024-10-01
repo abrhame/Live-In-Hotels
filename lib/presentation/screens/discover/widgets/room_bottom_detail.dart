@@ -4,7 +4,7 @@
   class RoomDetailsBottomSheet extends StatelessWidget {
     final Room room;
 
-    RoomDetailsBottomSheet({Key? key, required this.room}) : super(key: key);
+    const RoomDetailsBottomSheet({super.key, required this.room});
 
     @override
     Widget build(BuildContext context) {
@@ -14,10 +14,10 @@
           Navigator.pop(context);
         },
         child: ClipRRect(
-          borderRadius: BorderRadius.vertical(
+          borderRadius: const BorderRadius.vertical(
               top: Radius.circular(20.0)), // Curvy top corners
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.white,
             ),
             child: Column(
@@ -28,7 +28,7 @@
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
                     room.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: Colors.black),
@@ -38,45 +38,45 @@
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Rating: ${room.rating} (${room.reviewCount} reviews)",
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Type: ${room.roomType}",
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Amenities: ${room.amenities.join(', ')}",
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Check-in: ${room.checkInType}",
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Experience: ${room.experience}",
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
                     "Price: €${room.price} / Night\nAvailability: ${room.availability}",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(height: 16), // Add some space at the bottom
+                const SizedBox(height: 16), // Add some space at the bottom
               ],
             ),
           ),
@@ -89,7 +89,7 @@
   class _ImageSlider extends StatefulWidget {
     final List<String> imageUrls;
 
-    const _ImageSlider({Key? key, required this.imageUrls}) : super(key: key);
+    const _ImageSlider({required this.imageUrls});
 
     @override
     _ImageSliderState createState() => _ImageSliderState();
@@ -113,7 +113,7 @@
               },
               itemBuilder: (context, index) {
                 return Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     borderRadius: BorderRadius.vertical(
                         top: Radius.circular(
                             20.0)), // Curvy top corners for each image
@@ -154,7 +154,7 @@
             right: 16,
             child: Text(
               "${_currentIndex + 1} / ${widget.imageUrls.length}",
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             ),
           ),
           // Close icon
@@ -166,12 +166,12 @@
                 Navigator.pop(context); // Close the bottom sheet
               },
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.black54,
                   shape: BoxShape.circle,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.close,
                     color: Colors.white,
@@ -189,12 +189,12 @@
                 // Handle exit action here
               },
               child: Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.black54,
                   shape: BoxShape.circle,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.exit_to_app,
                     color: Colors.white,

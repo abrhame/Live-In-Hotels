@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
 
-  const CustomAppBar({Key? key, this.height = 200.0}) : super(key: key);
+  const CustomAppBar({super.key, this.height = 200.0});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       flexibleSpace: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(30.0),
                 bottomRight: Radius.circular(30.0),
@@ -28,7 +28,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(30.0),
                 bottomRight: Radius.circular(30.0),
               ),
@@ -38,19 +38,28 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           Positioned(
             top: 40.0,
+            left: 16.0,
             right: 16.0,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(
-                  icon: Icon(Icons.account_circle, color: Colors.white),
-                  onPressed: () {
-                    // Handle profile action
-                  },
+                Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(Icons.near_me_rounded,
+                          color: Colors.white),
+                      onPressed: () {
+                        // Handle directions action
+                      },
+                    ),
+                    Text('Norway', style: const TextStyle(color: Colors.white)),
+                  ],
                 ),
                 IconButton(
-                  icon: Icon(Icons.directions, color: Colors.white),
+                  icon: const Icon(Icons.account_circle_outlined,
+                      color: Colors.white),
                   onPressed: () {
-                    // Handle directions action
+                    // Handle profile action
                   },
                 ),
               ],
@@ -73,9 +82,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   child: TextField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.search, color: Colors.white),
+                      prefixIcon: const Icon(Icons.search, color: Colors.white),
                       hintText: 'Search...',
-                      hintStyle: TextStyle(color: Colors.white),
+                      hintStyle: const TextStyle(color: Colors.white),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30.0),
                         borderSide: BorderSide.none,
@@ -88,7 +97,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                         borderRadius: BorderRadius.circular(30.0),
                         borderSide: BorderSide.none,
                       ),
-                      contentPadding: EdgeInsets.symmetric(vertical: 12.0),
+                      contentPadding:
+                          const EdgeInsets.symmetric(vertical: 12.0),
                     ),
                   ),
                 ),

@@ -6,7 +6,7 @@ import 'room_bottom_detail.dart';
 class RoomCard extends StatelessWidget {
   final Room room;
 
-  const RoomCard({Key? key, required this.room}) : super(key: key);
+  const RoomCard({super.key, required this.room});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class RoomCard extends StatelessWidget {
       onTap: () => _showRoomDetails(context, room),
       child: Container(
         width: 310,
-        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        margin: const EdgeInsets.only(right: 12.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.0),
           boxShadow: [
@@ -45,29 +45,30 @@ class RoomCard extends StatelessWidget {
                       children: [
                         Text(
                           room.name,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 16.0, fontWeight: FontWeight.bold),
                         ),
                         Row(
                           children: [
-                            Icon(Icons.star, color: Colors.black),
+                            const Icon(Icons.star, color: Colors.black),
                             Text(
                               '${room.rating}(${room.reviewCount})',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ],
                         ),
                       ],
                     ),
-                    SizedBox(height: 4.0),
+                    const SizedBox(height: 4.0),
                     Text(
                         '${room.numberOfNights} guests . ${room.numberOfNights} bedrooms , ${room.numberOfNights} beds, ${room.numberOfNights} bathrooms'),
-                    SizedBox(height: 4.0),
+                    const SizedBox(height: 4.0),
                     Row(
                       children: [
                         Text(
                           '€${room.price}',
-                          style: TextStyle(
+                          style: const TextStyle(
                             decoration: TextDecoration.lineThrough,
                             color: Colors.grey,
                           ),
@@ -77,14 +78,14 @@ class RoomCard extends StatelessWidget {
                         const SizedBox(
                           width: 4,
                         ),
-                        Icon(
+                        const Icon(
                           Icons.fiber_manual_record,
                           size: 6,
                         ),
-                        SizedBox(width: 4.0),
+                        const SizedBox(width: 4.0),
                         Text(
                           '€${totalPrice.toStringAsFixed(2)} total',
-                          style: TextStyle(color: Colors.grey),
+                          style: const TextStyle(color: Colors.grey),
                         ),
                       ],
                     ),
@@ -112,9 +113,11 @@ void _showRoomDetails(BuildContext context, Room room) {
 }
 
 class RoomList extends StatelessWidget {
+  const RoomList({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 360,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
