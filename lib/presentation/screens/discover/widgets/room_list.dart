@@ -70,10 +70,9 @@ class _RoomCardState extends State<RoomCard> {
                           children: [
                             Text(
                               '${widget.room.numberOfNights} guests ',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 10,
-                                  color:
-                                      const Color.fromARGB(255, 124, 124, 124)),
+                                  color: Color.fromARGB(255, 124, 124, 124)),
                             ),
                             const Icon(
                               Icons.fiber_manual_record,
@@ -83,10 +82,9 @@ class _RoomCardState extends State<RoomCard> {
                             const SizedBox(width: 3),
                             Text(
                               '${widget.room.numberOfNights} bedrooms',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 10,
-                                  color:
-                                      const Color.fromARGB(255, 124, 124, 124)),
+                                  color: Color.fromARGB(255, 124, 124, 124)),
                             ),
                             const SizedBox(width: 3),
                             const Icon(
@@ -97,10 +95,9 @@ class _RoomCardState extends State<RoomCard> {
                             const SizedBox(width: 3),
                             Text(
                               '${widget.room.numberOfNights} beds',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 10,
-                                  color:
-                                      const Color.fromARGB(255, 124, 124, 124)),
+                                  color: Color.fromARGB(255, 124, 124, 124)),
                             ),
                             const SizedBox(width: 3),
                             const Icon(
@@ -111,10 +108,9 @@ class _RoomCardState extends State<RoomCard> {
                             const SizedBox(width: 3),
                             Text(
                               '${widget.room.numberOfNights} bathrooms',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 10,
-                                  color:
-                                      const Color.fromARGB(255, 124, 124, 124)),
+                                  color: Color.fromARGB(255, 124, 124, 124)),
                             ),
                           ],
                         ),
@@ -132,7 +128,7 @@ class _RoomCardState extends State<RoomCard> {
                             const SizedBox(width: 4.0),
                             Text(
                               '€${discountedPrice.toStringAsFixed(2)} night',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 13,
                                 color: Colors.black,
                               ),
@@ -192,8 +188,17 @@ void _showRoomDetails(BuildContext context, Room room) {
     context: context,
     isScrollControlled: true,
     builder: (context) {
-      return RoomDetailsBottomSheet(
-        room: room,
+      return Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30.0),
+            topRight: Radius.circular(30.0),
+          ),
+          color: Colors.white,
+        ),
+        child: RoomDetailsBottomSheet(
+          room: room,
+        ),
       );
     },
   );

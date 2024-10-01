@@ -52,7 +52,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                         // Handle directions action
                       },
                     ),
-                    Text('Norway', style: const TextStyle(color: Colors.white)),
+                    const Text('Norway', style: TextStyle(color: Colors.white)),
                   ],
                 ),
                 IconButton(
@@ -65,13 +65,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ],
             ),
           ),
-          Positioned(
+          const Positioned(
             top: 90.0,
             left: 25.0,
             right: 25.0,
             child: Text(
               'Hey, Martin! Tell us where you want to go.',
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 18.0,
                   fontWeight: FontWeight.w500),

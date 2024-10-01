@@ -152,7 +152,7 @@ class _FloatingBottomNavBarState extends State<FloatingBottomNavBar> {
                   width: 130.0, // Make the handle wider
                   height: 5.0,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(214, 54, 54, 54),
+                    color: const Color.fromARGB(214, 54, 54, 54),
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),

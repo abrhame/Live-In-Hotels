@@ -24,13 +24,13 @@ class _DiscoverPageState extends State<DiscoverPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 240, 240, 240),
-      appBar: CustomAppBar(height: 200.0),
+      backgroundColor: const Color.fromARGB(255, 240, 240, 240),
+      appBar: const CustomAppBar(height: 200.0),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.only(top: 10.0),
-          padding: EdgeInsets.only(left: 20.0),
-          child: Column(
+          margin: const EdgeInsets.only(top: 10.0),
+          padding: const EdgeInsets.only(left: 20.0),
+          child: const Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -42,9 +42,9 @@ class _DiscoverPageState extends State<DiscoverPage> {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(height: 8.0),
+              SizedBox(height: 8.0),
               RoomList(),
-              const SizedBox(height: 16.0),
+              SizedBox(height: 16.0),
               Text(
                 'Discover new places',
                 style: TextStyle(
@@ -52,7 +52,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(height: 8.0),
+              SizedBox(height: 8.0),
               HorizontalImageCards(
                 imageUrls: [
                   'assets/discover_top.jpg',
@@ -61,7 +61,7 @@ class _DiscoverPageState extends State<DiscoverPage> {
                   'assets/discover_top.jpg',
                 ],
               ),
-              const SizedBox(height: 30.0),
+              SizedBox(height: 30.0),
             ],
           ),
         ),
